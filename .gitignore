@@ -1,0 +1,6 @@
+site/
+build/
+*.scar
+__pycache__/
+.venv/
+.cache/

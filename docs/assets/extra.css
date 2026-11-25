@@ -1,0 +1,61 @@
+/* Custom admonitions matching Canoprof blocks (Material for MkDocs). */
+:root
+{
+    --md-admonition-icon--consigne: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>');
+    --md-admonition-icon--definition: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/></svg>');
+    --md-admonition-icon--reminder: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>');
+}
+
+.md-typeset .admonition.consigne,
+.md-typeset details.consigne
+{
+    border-color: #1565c0;
+}
+.md-typeset .consigne > .admonition-title,
+.md-typeset .consigne > summary
+{
+    background-color: rgb(21 101 192 / 10%);
+}
+.md-typeset .consigne > .admonition-title::before,
+.md-typeset .consigne > summary::before
+{
+    background-color: #1565c0;
+    -webkit-mask-image: var(--md-admonition-icon--consigne);
+    mask-image: var(--md-admonition-icon--consigne);
+}
+
+.md-typeset .admonition.definition,
+.md-typeset details.definition
+{
+    border-color: #6a1b9a;
+}
+.md-typeset .definition > .admonition-title,
+.md-typeset .definition > summary
+{
+    background-color: rgb(106 27 154 / 10%);
+}
+.md-typeset .definition > .admonition-title::before,
+.md-typeset .definition > summary::before
+{
+    background-color: #6a1b9a;
+    -webkit-mask-image: var(--md-admonition-icon--definition);
+    mask-image: var(--md-admonition-icon--definition);
+}
+
+.md-typeset .admonition.reminder,
+.md-typeset details.reminder
+{
+    border-color: #00838f;
+}
+.md-typeset .reminder > .admonition-title,
+.md-typeset .reminder > summary
+{
+    background-color: rgb(0 131 143 / 10%);
+}
+.md-typeset .reminder > .admonition-title::before,
+.md-typeset .reminder > summary::before
+{
+    background-color: #00838f;
+    -webkit-mask-image: var(--md-admonition-icon--reminder);
+    mask-image: var(--md-admonition-icon--reminder);
+}

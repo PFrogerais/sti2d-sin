@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NO_MKDOCS_2_WARNING: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Build the site (fails on broken links)
+        run: mkdocs build --strict
+      - name: Build and check the Canoprof archives
+        run: |
+          tools/build_scar.sh docs build/scar
+          find build/scar -name '*.scar' -print0 | xargs -0 canoprof-check

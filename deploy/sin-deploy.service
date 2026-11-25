@@ -1,0 +1,12 @@
+[Unit]
+Description=Publish the STI2D SIN website from GitHub
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=deploy
+Group=deploy
+EnvironmentFile=-/etc/default/sin-deploy
+ExecStart=/usr/local/bin/sin-deploy
+Nice=10
